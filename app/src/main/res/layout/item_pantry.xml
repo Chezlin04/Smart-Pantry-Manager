@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="10dp"
+    android:background="#FFFFFF">
+
+    <!-- Displays the ingredient name -->
+    <TextView
+        android:id="@+id/tvIngredientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tomatoes"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#202124" />
+
+    <!-- Displays the quantity and unit -->
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="4 pieces"
+        android:textSize="15sp"
+        android:textColor="#555555" />
+
+    <!-- Displays the expiry date -->
+    <TextView
+        android:id="@+id/tvExpiryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Expires: 15/09/2026"
+        android:textSize="13sp"
+        android:textColor="#777777" />
+
+    <!-- Buttons for editing and deleting the item -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="10dp">
+
+        <!-- Opens the ingredient for editing -->
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textAllCaps="false" />
+
+        <!-- Deletes the ingredient -->
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Delete"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</LinearLayout>
