@@ -4,60 +4,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F7F8F7"
-    android:padding="20dp">
+    android:background="#F7F8FA">
 
-    <!-- Main heading for the recipe screen -->
-    <TextView
-        android:id="@+id/tvRecipesTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Suggested Recipes"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#1B1B1B" />
-
-    <!-- Explains what the recipe list represents -->
-    <TextView
-        android:id="@+id/tvRecipesSubtitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Recipes you can make with the ingredients currently in your pantry."
-        android:textSize="15sp"
-        android:textColor="#666666" />
-
-    <!-- Small section heading above the list -->
-    <TextView
-        android:id="@+id/tvAvailableRecipes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Available Recipes"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#202124" />
-
-    <!-- Displayed when no recipes match the user's pantry -->
-    <TextView
-        android:id="@+id/tvNoRecipes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="No recipes match your pantry yet.\nAdd more ingredients to see suggestions."
-        android:textSize="16sp"
-        android:textColor="#666666" />
-
-    <!-- RecyclerView that will display all recipes that pass the strict-matching rule -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewRecipes"
+    <!-- Main content area -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="12dp"
-        android:clipToPadding="false"
-        android:paddingBottom="12dp" />
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Main heading -->
+        <TextView
+            android:id="@+id/tvRecipesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suggested Recipes"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1B1B1B" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvRecipesSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Recipes you can make with the ingredients currently in your pantry."
+            android:textSize="15sp"
+            android:textColor="#666666" />
+
+        <!-- Section heading -->
+        <TextView
+            android:id="@+id/tvAvailableRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Available Recipes"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#202124" />
+
+        <!-- Displayed when no recipes match -->
+        <TextView
+            android:id="@+id/tvNoRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="No recipes match your pantry yet.\nAdd more ingredients to see suggestions."
+            android:textSize="16sp"
+            android:textColor="#666666" />
+
+        <!-- Displays matching recipes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:paddingBottom="12dp" />
+
+    </LinearLayout>
+
+
+    <!-- Bottom navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <!-- Pantry -->
+        <Button
+            android:id="@+id/btnPantry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Pantry"
+            android:textAllCaps="false" />
+
+        <!-- Recipes screen -->
+        <Button
+            android:id="@+id/btnRecipes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Recipes"
+            android:textAllCaps="false" />
+
+        <!-- Settings -->
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.smartpantrymanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,12 +31,17 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Connect this Activity to the Suggested Recipes layout
+        // Connect this Activity to Suggested Recipes layout
         setContentView(R.layout.activity_suggested_recipes);
 
-        // Find views from the XML layout
+        // Find views from XML layout
         recyclerViewRecipes = findViewById(R.id.recyclerViewRecipes);
         tvNoRecipes = findViewById(R.id.tvNoRecipes);
+
+        // Bottom navigation buttons
+        Button btnPantry = findViewById(R.id.btnPantry);
+        Button btnRecipes = findViewById(R.id.btnRecipes);
+        Button btnSettings = findViewById(R.id.btnSettings);
 
         // Display recipes vertically
         recyclerViewRecipes.setLayoutManager(new LinearLayoutManager(this));
@@ -43,10 +49,30 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
         // Provides access to SQLite
         databaseHelper = new DatabaseHelper(this);
 
+        // Pantry Navigation
+        btnPantry.setOnClickListener(v -> {
+            Intent intent = new Intent(SuggestedRecipesActivity.this, MainActivity.class);
+            startActivity(intent);
+
+            finish();
+        });
+
+
+        // Recipes Navigation
+        btnRecipes.setOnClickListener(v -> {
+            // Currently viewing
+        });
+
+
+        // Settings Navigation
+        btnSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(SuggestedRecipesActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
         // Find and display recipes the user can make
         loadSuggestedRecipes();
     }
-
 
     // Checks all recipes and displays only the ones
     // that can be made using the current pantry

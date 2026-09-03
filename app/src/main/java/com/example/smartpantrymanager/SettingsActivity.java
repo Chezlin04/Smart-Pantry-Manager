@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.content.Intent;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -40,6 +42,34 @@ public class SettingsActivity extends AppCompatActivity {
         radioGroupSort = findViewById(R.id.radioGroupSort);
         radioAlphabetical = findViewById(R.id.radioAlphabetical);
         radioExpiry = findViewById(R.id.radioExpiry);
+
+        // Bottom Navigation Buttons
+        Button btnPantry = findViewById(R.id.btnPantry);
+        Button btnRecipes = findViewById(R.id.btnRecipes);
+        Button btnSettings = findViewById(R.id.btnSettings);
+
+        // Pantry Navigation
+        btnPantry.setOnClickListener(v -> {
+
+            Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+            startActivity(intent);
+
+            finish();
+        });
+
+        // Recipe Navigation
+        btnRecipes.setOnClickListener(v -> {
+
+            Intent intent = new Intent(SettingsActivity.this, SuggestedRecipesActivity.class);
+            startActivity(intent);
+
+            finish();
+        });
+
+        // Settings Navigation
+        btnSettings.setOnClickListener(v -> {
+            // Currently viewing
+        });
 
         // SharedPreferences stores small settings
         // locally on Android device
