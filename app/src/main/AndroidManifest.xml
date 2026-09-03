@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Application settings screen -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
         <!-- Displays the selected recipes full details -->
         <activity
             android:name=".RecipeDetailActivity"

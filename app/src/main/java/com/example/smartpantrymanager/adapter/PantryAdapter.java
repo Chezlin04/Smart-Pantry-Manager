@@ -18,6 +18,8 @@ public class PantryAdapter
         extends RecyclerView.Adapter<PantryAdapter.PantryViewHolder> {
 
     private List<PantryItem> pantryItems;
+    // Controls whether expiry dates are displayed
+    private boolean showExpiry;
 
     // Listener used to communicate Edit and Delete actions to MainActivity
     public interface OnPantryItemActionListener {
@@ -29,11 +31,10 @@ public class PantryAdapter
 
     private OnPantryItemActionListener listener;
 
-    // Receives the pantry items and the action listener
-    public PantryAdapter(List<PantryItem> pantryItems,
-            OnPantryItemActionListener listener) {
-
+    // Receives pantry items, expiry preference and action listener
+    public PantryAdapter(List<PantryItem> pantryItems, boolean showExpiry, OnPantryItemActionListener listener) {
         this.pantryItems = pantryItems;
+        this.showExpiry = showExpiry;
         this.listener = listener;
     }
 
@@ -52,9 +53,7 @@ public class PantryAdapter
 
     // Places the pantry item's information into the layout
     @Override
-    public void onBindViewHolder(
-            @NonNull PantryViewHolder holder,
-            int position) {
+    public void onBindViewHolder(@NonNull PantryViewHolder holder, int position) {
 
         PantryItem item = pantryItems.get(position);
 
@@ -64,19 +63,19 @@ public class PantryAdapter
         // Display the quantity and unit
         holder.tvQuantity.setText(item.getQuantity() + " " + item.getUnit());
 
-        // Display the expiry date if one exists
-        if (item.getExpiryDate() != null
-                && !item.getExpiryDate().isEmpty()) {
+        // Display the expiry date when user enabled it in Settings
+        if (showExpiry) {
+            holder.tvExpiryDate.setVisibility(View.VISIBLE);
 
-            holder.tvExpiryDate.setText(
-                    "Expires: " + item.getExpiryDate()
-            );
+            if (item.getExpiryDate() != null && !item.getExpiryDate().isEmpty()) {
+                holder.tvExpiryDate.setText("Expires: " + item.getExpiryDate());
+            } else {
+                holder.tvExpiryDate.setText("No expiry date");
+            }
 
         } else {
-
-            holder.tvExpiryDate.setText(
-                    "No expiry date"
-            );
+            // Hide expiry information
+            holder.tvExpiryDate.setVisibility(View.GONE);
         }
 
         // Tell MainActivity when the Edit button is pressed
