@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA">
+
+    <!-- Main container for all recipe information -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Recipe name -->
+        <TextView
+            android:id="@+id/tvRecipeDetailName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scrambled Eggs"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#202124" />
+
+        <!-- Ingredients heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Ingredients"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#202124" />
+
+        <!-- Displays the complete ingredient list.
+             Java will fill this using recipe_ingredients -->
+        <TextView
+            android:id="@+id/tvRecipeIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:text="• 2 pieces egg\n• 50 ml milk\n• 10 g butter"
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="#444444" />
+
+        <!-- Preparation heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Preparation"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#202124" />
+
+        <!-- Displays recipe preparation instructions -->
+        <TextView
+            android:id="@+id/tvRecipeInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:text="Beat the eggs with the milk. Melt the butter in a pan and cook gently until ready."
+            android:textSize="16sp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="#444444" />
+
+        <!-- Returns to the Suggested Recipes screen -->
+        <Button
+            android:id="@+id/btnBackToRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Back to Recipes"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>

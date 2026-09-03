@@ -1,9 +1,9 @@
 package com.example.smartpantrymanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -63,12 +63,17 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
             tvNoRecipes.setVisibility(View.GONE);
             recyclerViewRecipes.setVisibility(View.VISIBLE);
 
+            // Connect suggested recipes to the RecyclerView
             recipeAdapter = new RecipeAdapter(suggestedRecipes, recipe -> {
-                        // Temporary behavior (open RecipeDetailActivity)
-                        Toast.makeText(SuggestedRecipesActivity.this,
-                                "Selected: "
-                                        + recipe.getRecipeName(),
-                                Toast.LENGTH_SHORT).show();
+
+                // Open Recipe Detail screen
+                Intent intent = new Intent(SuggestedRecipesActivity.this, RecipeDetailActivity.class);
+
+                // RecipeDetailActivity will use this ID to get
+                // the correct recipe from database
+                intent.putExtra("recipe_id", recipe.getId());
+
+                startActivity(intent);
             });
 
             recyclerViewRecipes.setAdapter(recipeAdapter);
