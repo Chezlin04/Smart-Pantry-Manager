@@ -8,6 +8,11 @@
     <color name="edit_blue">#1976D2</color>
     <color name="delete_red">#D32F2F</color>
 
+    <!-- Bottom navigation colours -->
+    <color name="nav_purple">#6A4FB3</color>
+    <color name="nav_purple_dark">#563D9C</color>
+    <color name="nav_purple_light">#EEE8FA</color>
+
     <!-- White text used on coloured buttons -->
     <color name="button_text_white">#FFFFFF</color>
 </resources>

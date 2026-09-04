@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -195,37 +196,62 @@
     <!-- Bottom navigation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
         android:background="#FFFFFF"
         android:elevation="8dp">
 
-        <!-- Pantry -->
         <Button
             android:id="@+id/btnPantry"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/nav_button_outline"
+            app:backgroundTint="@null"
             android:text="Pantry"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/nav_purple"
+            android:textSize="14sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
 
-        <!-- Recipes -->
         <Button
             android:id="@+id/btnRecipes"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/nav_button_outline"
+            app:backgroundTint="@null"
             android:text="Recipes"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/nav_purple"
+            android:textSize="14sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
 
-        <!-- Settings -->
+        <!-- Settings screen -->
         <Button
             android:id="@+id/btnSettings"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/nav_button_active"
+            app:backgroundTint="@null"
             android:text="Settings"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
 
     </LinearLayout>
 
