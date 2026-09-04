@@ -5,15 +5,15 @@
     android:layout_height="match_parent"
     android:background="#F7F8FA">
 
-    <!-- Container keeps the form organised vertically -->
+    <!-- Main screen container -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Screen title -->
         <TextView
+            android:id="@+id/tvFormTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Ingredient"
@@ -21,8 +21,9 @@
             android:textStyle="bold"
             android:textColor="#202124" />
 
-        <!-- Short description -->
+
         <TextView
+            android:id="@+id/tvFormSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -31,81 +32,101 @@
             android:textSize="14sp"
             android:textColor="#6B7280" />
 
-        <!-- Ingredient name -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ingredient Name"
-            android:textStyle="bold"
-            android:textColor="#202124" />
 
-        <EditText
-            android:id="@+id/etIngredientName"
+        <!-- Rounded card containing the ingredient form -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="e.g. Tomatoes"
-            android:inputType="textCapSentences" />
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:background="@drawable/detail_card_background">
 
-        <!-- Quantity -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Quantity"
-            android:textStyle="bold"
-            android:textColor="#202124" />
+            <!-- Ingredient name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredient Name"
+                android:textStyle="bold"
+                android:textColor="#202124" />
 
-        <EditText
-            android:id="@+id/etQuantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="e.g. 4"
-            android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/etIngredientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp"
+                android:hint="e.g. Tomatoes"
+                android:inputType="textCapSentences" />
 
-        <!-- Unit -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Unit"
-            android:textStyle="bold"
-            android:textColor="#202124" />
 
-        <EditText
-            android:id="@+id/etUnit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="e.g. pieces, kg, litres"
-            android:inputType="textCapSentences" />
+            <!-- Quantity -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Quantity"
+                android:textStyle="bold"
+                android:textColor="#202124" />
 
-        <!-- Expiry date -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Expiry Date (Optional)"
-            android:textStyle="bold"
-            android:textColor="#202124" />
+            <EditText
+                android:id="@+id/etQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp"
+                android:hint="e.g. 4"
+                android:inputType="numberDecimal" />
 
-        <EditText
-            android:id="@+id/etExpiryDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="e.g. 15/09/2026"
-            android:inputType="date" />
 
-        <!-- Save button -->
+            <!-- Unit -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Unit"
+                android:textStyle="bold"
+                android:textColor="#202124" />
+
+            <EditText
+                android:id="@+id/etUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp"
+                android:hint="e.g. pieces, kg, litres"
+                android:inputType="textCapSentences" />
+
+
+            <!-- Expiry date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Expiry Date (Optional)"
+                android:textStyle="bold"
+                android:textColor="#202124" />
+
+            <EditText
+                android:id="@+id/etExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp"
+                android:hint="e.g. 15/09/2026"
+                android:inputType="date" />
+
+        </LinearLayout>
+
+
         <Button
             android:id="@+id/btnSaveIngredient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:text="Save Ingredient"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/button_text_white"
+            android:backgroundTint="@color/add_green" />
 
     </LinearLayout>
 

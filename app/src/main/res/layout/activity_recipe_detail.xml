@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="#F7F8FA">
 
-    <!-- Main container for all recipe information -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,15 +31,14 @@
             android:textStyle="bold"
             android:textColor="#202124" />
 
-        <!-- Displays the complete ingredient list.
-             Java will fill this using recipe_ingredients -->
+        <!-- Ingredients card -->
         <TextView
             android:id="@+id/tvRecipeIngredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:padding="16dp"
-            android:background="#FFFFFF"
+            android:padding="18dp"
+            android:background="@drawable/detail_card_background"
             android:text="• 2 pieces egg\n• 50 ml milk\n• 10 g butter"
             android:textSize="16sp"
             android:lineSpacingExtra="6dp"
@@ -56,27 +54,29 @@
             android:textStyle="bold"
             android:textColor="#202124" />
 
-        <!-- Displays recipe preparation instructions -->
+        <!-- Preparation card -->
         <TextView
             android:id="@+id/tvRecipeInstructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:padding="16dp"
-            android:background="#FFFFFF"
+            android:padding="18dp"
+            android:background="@drawable/detail_card_background"
             android:text="Beat the eggs with the milk. Melt the butter in a pan and cook gently until ready."
             android:textSize="16sp"
             android:lineSpacingExtra="5dp"
             android:textColor="#444444" />
 
-        <!-- Returns to the Suggested Recipes screen -->
+        <!-- Return to Suggested Recipes -->
         <Button
             android:id="@+id/btnBackToRecipes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:text="Back to Recipes"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/button_text_white"
+            android:backgroundTint="@color/nav_purple" />
 
     </LinearLayout>
 

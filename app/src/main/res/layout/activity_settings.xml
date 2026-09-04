@@ -69,8 +69,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:background="#FFFFFF">
+                android:padding="18dp"
+                android:background="@drawable/detail_card_background">
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchShowExpiry"
@@ -101,8 +101,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:background="#FFFFFF">
+                android:padding="18dp"
+                android:background="@drawable/detail_card_background">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -167,8 +167,8 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:background="#FFFFFF">
+                android:padding="18dp"
+                android:background="@drawable/detail_card_background">
 
                 <TextView
                     android:layout_width="match_parent"

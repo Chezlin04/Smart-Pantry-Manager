@@ -3,9 +3,11 @@ package com.example.smartpantrymanager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.smartpantrymanager.database.DatabaseHelper;
 import com.example.smartpantrymanager.model.PantryItem;
@@ -29,46 +31,52 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         // Connect Activity to the XML layout
         setContentView(R.layout.activity_add_edit_ingredient);
 
-        // Find the input fields from the layout
+        // Find heading and description
+        TextView tvFormTitle = findViewById(R.id.tvFormTitle);
+        TextView tvFormSubtitle = findViewById(R.id.tvFormSubtitle);
+
+        // Find input fields
         etIngredientName = findViewById(R.id.etIngredientName);
         etQuantity = findViewById(R.id.etQuantity);
         etUnit = findViewById(R.id.etUnit);
         etExpiryDate = findViewById(R.id.etExpiryDate);
 
-        // Create a connection to the SQLite database
-        databaseHelper = new DatabaseHelper(this);
-
-        // Check whether an existing pantry item was passed to this screen
-        editId = getIntent().getIntExtra("edit_id", -1);
-
-        if (editId != -1) {
-
-            // Change the screen title when editing
-            setTitle("Edit Ingredient");
-
-            // Fill the form with the existing ingredient data
-            etIngredientName.setText(
-                    getIntent().getStringExtra("edit_name")
-            );
-
-            etQuantity.setText(
-                    String.valueOf(
-                            getIntent().getDoubleExtra("edit_quantity", 0)
-                    )
-            );
-
-            etUnit.setText(
-                    getIntent().getStringExtra("edit_unit")
-            );
-
-            etExpiryDate.setText(
-                    getIntent().getStringExtra("edit_expiry")
-            );
-        }
-
+        // Find the main form button
         Button btnSaveIngredient = findViewById(R.id.btnSaveIngredient);
 
-        // Save ingredient when user clicks the button
+        // Create connection to SQLite
+        databaseHelper = new DatabaseHelper(this);
+
+        // Check whether an existing pantry item was passed
+        editId = getIntent().getIntExtra("edit_id", -1);
+
+
+        // Edit Mode
+        if (editId != -1) {
+            tvFormTitle.setText("Edit Ingredient");
+            tvFormSubtitle.setText("Update the ingredient details below");
+            btnSaveIngredient.setText("Update Ingredient");
+
+            // Blue represents Edit/Update actions
+            btnSaveIngredient.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.edit_blue));
+
+            // Fill form with existing ingredient data
+            etIngredientName.setText(getIntent().getStringExtra("edit_name"));
+            etQuantity.setText(String.valueOf(getIntent().getDoubleExtra("edit_quantity", 0)));
+            etUnit.setText(getIntent().getStringExtra("edit_unit"));
+            etExpiryDate.setText(getIntent().getStringExtra("edit_expiry"));
+
+        } else {
+            // Add Mode
+            tvFormTitle.setText("Add Ingredient");
+            tvFormSubtitle.setText("Add an ingredient to your pantry");
+            btnSaveIngredient.setText("Save Ingredient");
+
+            // Green represents Add/Create actions
+            btnSaveIngredient.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.add_green));
+        }
+
+        // Save or update when the user presses the button
         btnSaveIngredient.setOnClickListener(v -> saveIngredient());
     }
 

@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginBottom="10dp"
-    android:background="#FFFFFF">
+    android:padding="18dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/pantry_card_background">
 
     <!-- Displays the ingredient name -->
     <TextView
@@ -14,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tomatoes"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         android:textColor="#202124" />
 
@@ -23,7 +25,7 @@
         android:id="@+id/tvQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="6dp"
         android:text="4 pieces"
         android:textSize="15sp"
         android:textColor="#555555" />
@@ -33,7 +35,7 @@
         android:id="@+id/tvExpiryDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:text="Expires: 15/09/2026"
         android:textSize="13sp"
         android:textColor="#777777" />
@@ -44,7 +46,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="end"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="14dp">
 
         <!-- Opens the ingredient for editing -->
         <Button
